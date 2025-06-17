@@ -15,7 +15,7 @@
     --animate-fade-in-delay-2: fade-in-delay 0.7s ease-out 0.4s forwards;
     --animate-fade-in-delay-3: fade-in-delay 0.7s ease-out 0.6s forwards;
     --animate-fade-in-delay-4: fade-in-delay 0.7s ease-out 0.8s forwards;
-    --animate-meteor: meteor 5s linear infinite;
+    --animate-shootingStar: shootingStar 8s linear infinite;
 
     @keyframes float {
         0% {
@@ -47,17 +47,30 @@
         }
     }
 
-    @keyframes meteor {
+    @keyframes shootingStar {
         0% {
             transform: rotate(215deg) translateX(0);
             opacity: 0;
+            visibility: hidden;
+        }
+        10% {
+            opacity: 0.1;
+            visibility: visible;
+        }
+        20% {
+            opacity: 0.2;
+        }
+        30% {
+            opacity: 0.3;
         }
         70% {
-            opacity: 1;
+            opacity: 0.3;
+            visibility: visible;
         }
         100% {
             transform: rotate(215deg) translateX(-500px);
             opacity: 0;
+            visibility: hidden;
         }
     }
   }
@@ -151,7 +164,7 @@
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4)
 }
 
-@utility meteor {
+@utility shootingStar {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2)
 }
