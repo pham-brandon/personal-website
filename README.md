@@ -25,7 +25,3 @@
 - **JavaScript (JSX/ES6+)**
 - **CSS (Tailwind CSS)**
 - **HTML**
-
----
-
-**Thanks for visiting! 👾**
