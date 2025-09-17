@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@layer base {
+    .bg-grid-pattern {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(148 163 184 / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+    }
+    
+    @media (max-width: 768px) {
+        .bg-grid-pattern {
+            background-size: 24px 24px;
+        }
+    }
+}
+
 @theme {
     --color-border: hsl(var(--border));
     --color-background: hsl(var(--background));
@@ -15,7 +27,13 @@
     --animate-fade-in-delay-2: fade-in-delay 0.7s ease-out 0.4s forwards;
     --animate-fade-in-delay-3: fade-in-delay 0.7s ease-out 0.6s forwards;
     --animate-fade-in-delay-4: fade-in-delay 0.7s ease-out 0.8s forwards;
+    --animate-fade-in-delay-5: fade-in-delay 0.7s ease-out 1s forwards;
+    --animate-fade-in-delay-6: fade-in-delay 0.7s ease-out 1.2s forwards;
+    --animate-fade-in-delay-7: fade-in-delay 0.7s ease-out 1.4s forwards;
     --animate-shootingStar: shootingStar 8s linear infinite;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-float-delay-1: float 6s ease-in-out 1s infinite;
+    --animate-float-delay-2: float 6s ease-in-out 2s infinite;
 
     @keyframes float {
         0% {
@@ -50,11 +68,32 @@
     @keyframes fade-in-delay {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
         }
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @keyframes gradient-shift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    @keyframes shimmer {
+        0% {
+            background-position: -1000px 0;
+        }
+        100% {
+            background-position: 1000px 0;
         }
     }
 
@@ -93,8 +132,8 @@
 
     --card: 0 0% 100%;
 
-    --primary: 245 45% 60%;
-    --primary-foreground: 210 42% 98%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
 
@@ -106,7 +145,7 @@
 
     --card: 222.2 45% 9%;
 
-    --primary: 251 60% 60%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
@@ -155,7 +194,7 @@
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 @utility gradient-border {
@@ -167,7 +206,7 @@
 
 @utility button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-  transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,250,0.5)]
+  transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
   hover:scale-105 active:scale-95;
 }
 

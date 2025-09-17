@@ -3,11 +3,8 @@ import { cn } from "../lib/utils"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-    {name: "Home", href: "#hero"},
-    {name: "About", href: "#about"},
-    {name: "Skills", href: "#skills"},
-    {name: "Projects", href: "#projects"},
-    {name: "Contact", href: "#contact"},
+    {name: "Home", href: "#"},
+    {name: "Projects", href: "#projects"}
 ]
 
 export const Navbar = () => {
@@ -24,32 +21,33 @@ export const Navbar = () => {
     }, [])
 
     return (
-        <nav 
-            className={cn(
-                "fixed w-full z-40 transition-all duration-300", 
-                isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
-            )}
-        >
-            <div className="container flex items-center justify-between">
-                <a className="text-xl font-bold text-primary flex items-center">
-                    <span className="relative z-10">
-                        <span className="text-glow text-foreground">Brandon Pham</span> Portfolio
-                    </span>
-                </a>
-
-                {/* Desktop Navbar */}
-                <div className="hidden md:flex space-x-8">
-                    {navItems.map((item, key) => (
-                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                            {item.name}
-                        </a>
-                    ))}
-                </div>
+        <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-6 w-full">
+            <nav 
+                className={cn(
+                    "w-full max-w-6xl transition-all duration-300 border border-border/20 rounded-full bg-background/80 backdrop-blur-lg shadow-sm",
+                    isScrolled ? "py-3 px-6" : "py-4 px-8"
+                )}
+            >
+                <div className="w-full flex items-center justify-center md:justify-end space-x-2">
+                    {/* Desktop Navbar */}
+                    <div className="flex space-x-2">
+                        {navItems.map((item, key) => (
+                            <a 
+                                key={key} 
+                                href={item.href} 
+                                className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
+                                bg-foreground/5 hover:bg-foreground/10 text-foreground/90 hover:text-primary
+                                border border-foreground/10 hover:border-foreground/20"
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                    </div>
                 
                 {/* Mobile Menu Button */}
                 <button 
                     onClick={() => setIsMenuOpen((prev) => !prev)}
-                    className="md:hidden p-2 text-foreground z-50"
+                    className="md:hidden p-2 rounded-full hover:bg-foreground/5 transition-colors"
                     aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -60,12 +58,13 @@ export const Navbar = () => {
                     <div 
                         className="fixed inset-0 bg-background/95 backdrop-blur-md z-30 flex flex-col items-center justify-center md:hidden"
                     >
-                        <div className="flex flex-col space-y-8 text-xl">
+                        <div className="flex flex-col space-y-4 w-full px-4">
                             {navItems.map((item, key) => (
                                 <a 
                                     key={key} 
                                     href={item.href} 
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300" 
+                                    className="px-6 py-4 rounded-xl text-lg text-center font-medium transition-all duration-200
+                                    bg-foreground/5 hover:bg-foreground/10 text-foreground/90 hover:text-primary" 
                                     onClick={() => setIsMenuOpen(false)}
                                 > 
                                     {item.name} 
@@ -74,7 +73,8 @@ export const Navbar = () => {
                         </div>
                     </div>
                 )}
-            </div>
-        </nav>
+                </div>
+            </nav>
+        </div>
     );
 }

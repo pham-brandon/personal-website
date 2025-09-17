@@ -3,76 +3,83 @@ import { Phone } from "lucide-react"
 import { cn } from "../lib/utils"
 import { Send } from "lucide-react"
 export const ContactSection = () => {
-    return <section id ="contact"className="py-24 px-4 relative bg-secondary/30">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                Contact And <span className="text-primary">Connect</span> With Me!
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Have a question or want to work together? Feel free to reach out!
-            </p>
+    return (
+        <section id="contact" className="py-20 relative overflow-hidden">
+            <div className="container mx-auto max-w-6xl px-6 relative z-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        Get In <span className="text-primary">Touch</span>
+                    </h2>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                        Have a project in mind or want to chat? I'd love to hear from you!
+                    </p>
+                </div>
 
-            <div className="flex justify-center">
-                <div className="space-y-8 bg-card p-8 rounded-lg shadow-xs">
-                    <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-                    <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Mail className="text-primary h-6 w-6"></Mail>
+                <div className="grid md:grid-cols-2 gap-12">
+                    <div className="space-y-8 bg-card p-8 rounded-xl border border-border/40 backdrop-blur-sm">
+                        <h3 className="text-2xl font-semibold text-foreground">Contact Information</h3>
+                        <p className="text-muted-foreground">
+                            Feel free to reach out through any of these channels. I'll get back to you as soon as possible!
+                        </p>
+                        
+                        <div className="space-y-6">
+                            <div className="flex items-start space-x-4 group">
+                                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                                    <Mail className="text-primary h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h4 className="font-medium text-foreground">Email</h4>
+                                    <a 
+                                        href="mailto:pham-brandon@outlook.com"
+                                        className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                                    >
+                                        pham-brandon@outlook.com
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className="font-medium text-left">Email</h4>
-                                <a href="mailto:pham-brandon@outlook.com"
-                                className="text-muted-foreground hover:text-primary transition-colors">
-                                    pham-brandon@outlook.com
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Phone className="text-primary h-6 w-6"></Phone>
+                            <div className="flex items-start space-x-4 group">
+                                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                                    <Phone className="text-primary h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h4 className="font-medium text-foreground">Phone</h4>
+                                    <a 
+                                        href="tel:+12345678"
+                                        className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                                    >
+                                        +1 (234) 567-8901
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className="font-medium text-left">Phone</h4>
-                                <a href="tel:+12345678"
-                                className="text-muted-foreground hover:text-primary transition-colors">
-                                    12345678
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10"
-                            href="https://www.linkedin.com/in/pham-brandon2/">
-                                <Linkedin className="text-primary h-6 w-6"></Linkedin>
+                            <div className="flex items-start space-x-4 group">
+                                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                                    <Linkedin className="text-primary h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h4 className="font-medium text-foreground">LinkedIn</h4>
+                                    <a
+                                        href="https://www.linkedin.com/in/pham-brandon2/" 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                                    >
+                                        in/pham-brandon2
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className="font-medium text-left">LinkedIn</h4>
-                                <a
-                                href="https://www.linkedin.com/in/pham-brandon2/" target="_blank"
-                                className="text-muted-foreground hover:text-primary transition-colors">
-                                    in/pham-brandon2
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <MapPin className="text-primary h-6 w-6"></MapPin>
-                            </div>
-                            <div>
-                                <h4 className="font-medium text-left">Location</h4>
-                                <a
-                                className="text-muted-foreground hover:text-primary transition-colors">
-                                    Mississauga, ON, Canada
-                                </a>
+                            <div className="flex items-start space-x-4 group">
+                                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                                    <MapPin className="text-primary h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h4 className="font-medium text-foreground">Location</h4>
+                                    <div className="text-muted-foreground text-sm">
+                                        Mississauga, ON, Canada
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,6 +133,6 @@ export const ContactSection = () => {
 
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    )
 }
