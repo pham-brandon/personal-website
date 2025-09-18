@@ -36,43 +36,15 @@ export const Navbar = () => {
                                 key={key} 
                                 href={item.href} 
                                 className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
-                                bg-foreground/5 hover:bg-foreground/10 text-foreground/90 hover:text-primary
-                                border border-foreground/10 hover:border-foreground/20"
+                                bg-black/40 hover:bg-black/50 text-white/90 hover:text-white
+                                border-0 backdrop-blur-sm"
                             >
                                 {item.name}
                             </a>
                         ))}
                     </div>
                 
-                {/* Mobile Menu Button */}
-                <button 
-                    onClick={() => setIsMenuOpen((prev) => !prev)}
-                    className="md:hidden p-2 rounded-full hover:bg-foreground/5 transition-colors"
-                    aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-                >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
-
-                {/* Mobile Navigation Menu */}
-                {isMenuOpen && (
-                    <div 
-                        className="fixed inset-0 bg-background/95 backdrop-blur-md z-30 flex flex-col items-center justify-center md:hidden"
-                    >
-                        <div className="flex flex-col space-y-4 w-full px-4">
-                            {navItems.map((item, key) => (
-                                <a 
-                                    key={key} 
-                                    href={item.href} 
-                                    className="px-6 py-4 rounded-xl text-lg text-center font-medium transition-all duration-200
-                                    bg-foreground/5 hover:bg-foreground/10 text-foreground/90 hover:text-primary" 
-                                    onClick={() => setIsMenuOpen(false)}
-                                > 
-                                    {item.name} 
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                )}
+                {/* Mobile navigation removed - will only show desktop navigation */}
                 </div>
             </nav>
         </div>
