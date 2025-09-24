@@ -14,7 +14,7 @@ const projects = [
     {
         id: 2,
         title: "MockPrep",
-        description: "A web app for practicing interviews. Built with React, TypeScript, and Firebase to help people prepare for interviews through practice sessions with feedback.",
+        description: "A professional interview preparation tool that helps candidates practice with realistic mock interviews. The platform supports both speech and text responses, providing immediate feedback on performance. Built with React, TypeScript, and Firebase, it features a clean interface and leverages modern web technologies including Vite, Tailwind CSS, and AI analysis to enhance interview preparation.",
         image: "/projects/project2.png",
         tags: ["React", "TypeScript", "Firebase"],
         demoUrl: "https://mockprep-app.web.app/",
@@ -35,13 +35,13 @@ const projects = [
         description: "Interactive data visualization dashboard built with Dash and Plotly, showcasing key 2023 Canadian workforce and demographic trends across provinces and territories. Includes insights on employment, industry sectors, and population statistics.",
         image: "/projects/project4.png",
         tags: ["Python", "Dash", "Plotly", "Pandas"],
-        demoUrl: "#",
+        demoUrl: "https://canadian-workforce-analytics-dashboard.onrender.com/",
         githubUrl: "https://github.com/pham-brandon/Canadian-Workforce-Analytics-Dashboard",
     },
     {
         id: 5,
         title: "Personal Website",
-        description: "A modern, responsive personal portfolio website built with React and Vite, showcasing my projects, skills, and experience. Features a clean, minimalist design with smooth animations and a mobile-first approach for optimal viewing across all devices.",
+        description: "A modern, responsive personal portfolio website built with React and Vite, showcasing my projects, skills, and experience. Features a clean, minimalist design with smooth animations for optimal viewing across all devices.",
         image: "/projects/project5.png",
         tags: ["React", "Vite", "Tailwind CSS", "React Router"],
         demoUrl: "https://brandonpham.dev",
@@ -148,8 +148,8 @@ export const ProjectsSection = () => {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex justify-center mt-4">
-                                    <div className="flex flex-wrap gap-3">
+                                <div className="flex justify-center w-full mt-4">
+                                    <div className="flex flex-wrap justify-center gap-3 w-full px-2">
                                         {project.githubUrl && project.githubUrl !== '#' && (
                                             <a 
                                                 href={project.githubUrl}
@@ -220,8 +220,8 @@ export const ProjectsSection = () => {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex justify-center mt-4">
-                                    <div className="flex flex-wrap gap-3">
+                                <div className="flex justify-center w-full mt-4">
+                                    <div className="flex flex-wrap justify-center gap-3 w-full px-2">
                                         {projects[4].githubUrl && projects[4].githubUrl !== '#' && (
                                             <a 
                                                 href={projects[4].githubUrl}
